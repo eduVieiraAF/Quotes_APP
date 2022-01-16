@@ -24,7 +24,8 @@ class QuotesListAdapter(private val context: Context, private val list: List<Quo
     override fun onBindViewHolder(holder: QuotesViewHolder, position: Int) {
 
         holder.quote.text = "'${list[position].text}'"
-        holder.author.text = "- ${list[position].author}"
+        if (list[position].author.isNullOrEmpty()) holder.author.text = "- Unknown"
+        else holder.author.text = "- ${list[position].author}"
     }
 
     override fun getItemCount(): Int {
