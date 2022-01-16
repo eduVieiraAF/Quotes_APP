@@ -5,45 +5,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="8dp"
     app:cardCornerRadius="8dp"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/teal_water"
     android:backgroundTint="@color/black"
     android:layout_margin="8dp">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:strokeColor="@color/teal_700"
+        android:layout_margin="4dp"
+        android:backgroundTint="@color/black"
+        app:strokeWidth="1dp">
 
-        <TextView
-            android:id="@+id/TV_quote"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="This is a text"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:textColor="@color/teal_water"
-            android:padding="8dp"/>
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/TV_author"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:text="-This is a text"
-            android:textAlignment="textEnd"
-            android:textSize="12sp"
-            android:textColor="@color/dark_teal"
-            android:padding="8dp"/>
+            <TextView
+                android:id="@+id/TV_quote"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="This is a text"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/teal_water"
+                android:padding="8dp"/>
 
-        <Button
-            android:id="@+id/BTN_copy"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:foregroundTint="@color/white"
-            android:text="copy"
-            android:textSize="12dp"
-            android:layout_margin="8dp"/>
+            <TextView
+                android:id="@+id/TV_author"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:text="-This is a text"
+                android:textAlignment="textEnd"
+                android:textSize="12sp"
+                android:textColor="@color/teal_700"
+                android:padding="8dp"/>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/BTN_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:foregroundTint="@color/white"
+                android:text="copy"
+                android:textSize="12sp"
+                android:layout_margin="8dp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 
 </com.google.android.material.card.MaterialCardView>

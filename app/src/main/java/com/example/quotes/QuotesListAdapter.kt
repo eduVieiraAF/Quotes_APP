@@ -1,5 +1,6 @@
 package com.example.quotes
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -19,10 +20,11 @@ class QuotesListAdapter(private val context: Context, private val list: List<Quo
         return QuotesViewHolder(layout)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: QuotesViewHolder, position: Int) {
 
-        holder.quote.text = list[position].text
-        holder.author.text = list[position].text
+        holder.quote.text = "'${list[position].text}'"
+        holder.author.text = "- ${list[position].author}"
     }
 
     override fun getItemCount(): Int {
