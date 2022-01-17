@@ -8,15 +8,14 @@
     app:cardCornerRadius="8dp"
     app:strokeWidth="2dp"
     app:strokeColor="@color/teal_water"
-    android:backgroundTint="@color/black"
-    android:layout_margin="6dp">
+    android:backgroundTint="@color/white"
+    android:layout_margin="3dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:strokeColor="@color/teal_700"
-        android:layout_margin="4dp"
-        android:backgroundTint="@color/black"
+        android:layout_margin="6dp"
         app:strokeWidth="1dp">
 
         <LinearLayout
@@ -30,8 +29,9 @@
                 android:layout_height="match_parent"
                 android:text="This is a text"
                 android:textAlignment="center"
-                android:textSize="18sp"
-                android:textColor="@color/light_teal"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/teal_water"
                 android:padding="8dp"
                 tools:ignore="HardcodedText" />
 
@@ -43,7 +43,7 @@
                 android:text="-This is a text"
                 android:textAlignment="textEnd"
                 android:textSize="12sp"
-                android:textColor="@color/teal_200"
+                android:textColor="@color/teal_700"
                 android:padding="8dp"
                 tools:ignore="HardcodedText" />
 

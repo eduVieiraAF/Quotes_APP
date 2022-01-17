@@ -9,8 +9,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class QuotesListAdapter(private val context: Context, private val list: List<QuotesResponse>)
-    : RecyclerView.Adapter<QuotesViewHolder>() {
+class QuotesListAdapter(private val context: Context, private val list: List<QuotesResponse>,
+    val listener: CopyListener) : RecyclerView.Adapter<QuotesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuotesViewHolder {
 
@@ -26,6 +26,7 @@ class QuotesListAdapter(private val context: Context, private val list: List<Quo
         holder.quote.text = "'${list[position].text}'"
         if (list[position].author.isNullOrEmpty()) holder.author.text = "- Unknown"
         else holder.author.text = "- ${list[position].author}"
+        holder.copy.setOnClickListener {listener.onCopyClicked(list[holder.adapterPosition].text)}
     }
 
     override fun getItemCount(): Int {
@@ -39,5 +40,4 @@ class QuotesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var quote: TextView = itemView.findViewById(R.id.TV_quote)
     var author: TextView = itemView.findViewById(R.id.TV_author)
     var copy: Button = itemView.findViewById(R.id.BTN_copy)
-
 }

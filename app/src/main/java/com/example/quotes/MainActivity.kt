@@ -1,7 +1,10 @@
 package com.example.quotes
 
+import android.content.ClipData
+import android.content.ClipboardManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -24,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             RV_quotes.setHasFixedSize(true)
             RV_quotes.layoutManager = StaggeredGridLayoutManager(2,
                 LinearLayoutManager.VERTICAL)
-            val adapter = QuotesListAdapter(this@MainActivity, response)
+            val adapter = QuotesListAdapter(this@MainActivity, response, copyListener)
             RV_quotes.adapter = adapter
         }
 
@@ -37,5 +40,16 @@ class MainActivity : AppCompatActivity() {
                 .show()
         }
     }
-    // TODO: work on the "copy" button
+    private val copyListener: CopyListener = object : CopyListener{
+
+        override fun onCopyClicked(text: String) {
+
+            val clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("copied_data", text)
+            clipboard.setPrimaryClip(clip)
+            Toast.makeText(this@MainActivity, "Quote copied to clipboard",
+                Toast.LENGTH_LONG).show()
+        }
+
+    }
 }
