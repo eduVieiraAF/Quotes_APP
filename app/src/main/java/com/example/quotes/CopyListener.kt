@@ -2,7 +2,5 @@ package com.example.quotes
 
 interface CopyListener {
 
-    fun onCopyClicked(text: String){
-
-    }
+    fun onCopyClicked(text: String)
 }

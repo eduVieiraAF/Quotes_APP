@@ -10,7 +10,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class QuotesListAdapter(private val context: Context, private val list: List<QuotesResponse>,
-    val listener: CopyListener) : RecyclerView.Adapter<QuotesViewHolder>() {
+
+    private val listener: CopyListener) : RecyclerView.Adapter<QuotesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuotesViewHolder {
 
@@ -24,8 +25,7 @@ class QuotesListAdapter(private val context: Context, private val list: List<Quo
     override fun onBindViewHolder(holder: QuotesViewHolder, position: Int) {
 
         holder.quote.text = "'${list[position].text}'"
-        if (list[position].author.isNullOrEmpty()) holder.author.text = "- Unknown"
-        else holder.author.text = "- ${list[position].author}"
+        holder.author.text = "-${list[position].author ?: "Unknown"}"
         holder.copy.setOnClickListener {listener.onCopyClicked(list[holder.adapterPosition].text)}
     }
 
