@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:strokeColor="@color/teal_700"
+        android:layoutAnimation="@anim/layout_animation"
         android:layout_margin="6dp"
         app:strokeWidth="1dp">
 
